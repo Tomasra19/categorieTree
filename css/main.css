@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    margin: 0 auto;
+}
+
+#btnNew {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+#btnNew:hover {
+    background-color: #e60000;
+    cursor: pointer;
+}
+
+#formContainer {
+    border-radius: 10px;
+    background-color: #ddd;
+    margin: 50px;
+    padding: 20px;
+    align-items: center;
+}
+
+#categoriesContainer {
+    padding: 20px;
+    margin: 50px;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+#submitButton {
+    background-color: #368CE7;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#submitButton:hover {
+    background-color: #e60000;
+    cursor: pointer;
+}
+
+ul, li {
+    list-style-type: disc;
+}
+
