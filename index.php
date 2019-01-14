@@ -1,51 +1,6 @@
 <?php
 include_once 'php/dbConfig.php';
 
-class Categorie
-{
-    public $id;
-    public $name;
-    public $parentId;
-
-    public function __construct($id, $name, $parentId)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->parentId = $parentId;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    public function getParentId()
-    {
-        return $this->parentId;
-    }
-
-    public function setParentId($parentId)
-    {
-        $this->parentId = $parentId;
-    }
-}
-
-
 //select all rows from the category table query
 $dbInstance = Database::getInstance();
 $db = $dbInstance->getConnection();
@@ -54,7 +9,7 @@ $result = $db->query($sql);
 
 //array for all categories
 $allCategories = array();
-//create a multidimensional array to hold a list of categories and parent category Id's
+//multidimensional array to hold a list of categories and parent category
 $categoryMulti = array(
     'categories' => array(),
     'parent_cats' => array()
@@ -68,7 +23,7 @@ while ($row = $result->fetch_assoc()) {
     $categoryMulti['parent_cats'][$row['parentId']][] = $row['id'];
     $allCategories[] = $row;
 }
-//function to build final category tree and print html
+//build final category tree and print html
 function printCategoryTree($parent, $category)
 {
     $html = "";
